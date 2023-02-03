@@ -21,6 +21,16 @@ commands:
             sudo apt install software-properties-common
             sudo add-apt-repository --yes --update ppa:ansible/ansible
             sudo apt install ansible
+
+  install_nodejs:
+    description: Install node.js 13
+    steps:
+     - run:
+          name: Install node.js 13
+          command: |
+            curl -fsSL https://deb.nodesource.com/setup_13.x
+            sudo apt install -y nodejs
+
   destroy-environment:
     description: Destroy back-end and front-end cloudformation stacks given a workflow ID.
     parameters:
@@ -54,7 +64,6 @@ commands:
              npm install
              npm audit fix --audit-level=critical --force
              npm audit fix --force
-             npm audit --audit-level=critical
              npm run migration:revert
             fi
             
