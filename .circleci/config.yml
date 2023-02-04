@@ -401,7 +401,6 @@ jobs:
             else
               echo "-----------------------------Cannot delete--------------------------------------"
             fi
-            
 
 workflows:
   default:
