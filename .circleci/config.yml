@@ -257,7 +257,7 @@ jobs:
           name: Install dependencies
           command: |
             cd frontend
-            sudo apt install npm
+            sudo apt-get install npm
             npm install
       - run:
           name: Get backend url
