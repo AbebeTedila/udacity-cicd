@@ -78,7 +78,6 @@ jobs:
           name: Build front-end
           command: |
             cd frontend
-            sudo apt install npm
             npm install
             npm run build
       - save_cache:
@@ -258,6 +257,7 @@ jobs:
           name: Install dependencies
           command: |
             cd frontend
+            sudo apt-get install npm
             npm install
       - run:
           name: Get backend url
