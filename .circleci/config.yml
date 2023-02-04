@@ -78,6 +78,7 @@ jobs:
           name: Build front-end
           command: |
             cd frontend
+            sudo apt install npm
             npm install
             npm run build
       - save_cache:
@@ -250,7 +251,7 @@ jobs:
     steps:
       - checkout
       - install_awscli
-      - install_nodejs
+      # - install_nodejs
       - restore_cache:
           keys: [frontend-deps]
       - run:
