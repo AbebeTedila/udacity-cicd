@@ -392,15 +392,15 @@ jobs:
             echo Stack names: "${STACKS[@]}"
             export OldWorkflowID=$(curl --insecure https://kvdb.io/${KVDB_BUCKET}/old_workflow_id)
             echo Old Workflow ID: $OldWorkflowID 
-            if [[ "${STACKS[@]}" =~ "${OldWorkflowID}" ]]
-            then
-              echo "-----------------------------Delete confirmed---------------------------------------"
-              aws s3 rm "s3://udacitycicd-${OldWorkflowID}" --recursive
-              aws cloudformation delete-stack --stack-name "udacitycicd-backend-${OldWorkflowID}"
-              aws cloudformation delete-stack --stack-name "udacitycicd-frontend-${OldWorkflowID}"
-            else
-              echo "-----------------------------Cannot delete--------------------------------------"
-            fi
+            # if [[ "${STACKS[@]}" =~ "${OldWorkflowID}" ]]
+            # then
+            #   echo "-----------------------------Delete confirmed---------------------------------------"
+            #   aws s3 rm "s3://udacitycicd-${OldWorkflowID}" --recursive
+            #   aws cloudformation delete-stack --stack-name "udacitycicd-backend-${OldWorkflowID}"
+            #   aws cloudformation delete-stack --stack-name "udacitycicd-frontend-${OldWorkflowID}"
+            # else
+            #   echo "-----------------------------Cannot delete--------------------------------------"
+            # fi
 
 workflows:
   default:
